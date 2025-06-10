@@ -275,13 +275,23 @@ function App() {
       }
       set_data(list)
    })
+   const del = useCallback((e) => {
+      let list = []
+      for (let i = 0; i < data.length; i++) {
+         if (data[i].id != e) list.push(data[i])
+      }
+      set_data(list)
+   })
    const list = useMemo(() => {
       let out = []
       for (let i = 0; i < data.length; i++) {
          out.push(
             <li class={data[i].checked} id={data[i].id} onDoubleClick={() => double_remove(data[i].id)}>
                <img src={data[i].src}></img>
-               <p>{data[i].name}</p>
+               <div style={{ display: 'flex' }}>
+                  <p style={{ marginRight: '10px' }}>{data[i].name}</p>
+                  <button onClick={() => del(data[i].id)}>삭제</button>
+               </div>
             </li>
          )
       }
