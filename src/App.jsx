@@ -8,16 +8,16 @@ function App() {
       id: 1,
       value: '',
    })
-   const on_change = (e) => {
+   const on_change = useCallback((e) => {
       set_value({ ...input, value: e.target.value })
-   }
-   const regist_src = (src) => {
+   })
+   const regist_src = useCallback((src) => {
       if (src < 1000) src = `000${src}`
       else if (src < 10000) src = `00${src}`
       else if (src < 100000) src = `0${src}`
       return `https://data1.pokemonkorea.co.kr/newdata/pokedex/mid/${src}.png`
-   }
-   const on_click = () => {
+   })
+   const on_click = useCallback(() => {
       let src = ''
       if (input.value == '이상해씨') src = 101
       else if (input.value == '파이리') src = 401
@@ -73,16 +73,16 @@ function App() {
          id: input.id + 1,
          value: '',
       })
-   }
-   const remove = (e) => {
+   })
+   const remove = useCallback((e) => {
       let list = []
       for (let i = 0; i < data.length - 1; i++) {
          list.push(data[i])
       }
       console.log(list)
       set_data(list)
-   }
-   const double_remove = (e) => {
+   })
+   const double_remove = useCallback((e) => {
       let list = []
       for (let i = 0; i < data.length; i++) {
          if (data[i].id != e) list.push(data[i])
@@ -95,7 +95,7 @@ function App() {
          }
       }
       set_data(list)
-   }
+   })
    const list = useMemo(() => {
       let out = []
       for (let i = 0; i < data.length; i++) {
@@ -108,9 +108,9 @@ function App() {
       }
       return out
    }, [data])
-   const key_down = (e) => {
+   const key_down = useCallback((e) => {
       if (e.key == 'Enter') on_click()
-   }
+   })
    return (
       <div class="temp">
          <input onKeyDown={key_down} onChange={on_change} value={input.value} placeholder="이름을 입력해주세요"></input>
