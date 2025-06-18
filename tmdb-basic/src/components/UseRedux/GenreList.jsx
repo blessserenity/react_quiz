@@ -29,4 +29,4 @@ function GenreList() {
    )
 }
 
-export default GenreList // 내보낼 때도 컴포넌트 이름과 일치시킵니다.
+export default GenreList

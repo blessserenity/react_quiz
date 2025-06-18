@@ -43,7 +43,6 @@ export const getUpcomingMovies = async (page = 1) => {
    return response //응답결과 데이터 리턴
 }
 
-// 영화상세 정보 가져오기
 export const getMovieDetails = async (movieId) => {
    // https://api.themoviedb.org/3/movie/{movie_id}?language=ko-KR
    const response = await tmdbApi.get(`/movie/${movieId}`, {
@@ -51,7 +50,7 @@ export const getMovieDetails = async (movieId) => {
          language: 'ko-KR',
       },
    })
-   return response //응답결과 데이터 리턴
+   return response
 }
 export const getGenre = async () => {
    // https://api.themoviedb.org/3/genre/movie/list?language=ko-KR

@@ -29,7 +29,7 @@ const movieSlice = createSlice({
    name: 'movies',
    initialState: {
       movies: [], // 인기영화목록
-      movieDetails: null, // 영화 상세 정보
+      movieDetails: null,
       GenreList: null,
       loading: false, // 로딩여부
       error: null, // 에러메세지
@@ -60,7 +60,6 @@ const movieSlice = createSlice({
          })
          .addCase(fetchMovieDetails.fulfilled, (state, action) => {
             state.loading = false
-            // action.payload는 fetchMovieDetails() 에서 리턴해주는 값
             state.movieDetails = action.payload
             state.GenreList = action.payload
          })
