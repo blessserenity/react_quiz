@@ -5,19 +5,11 @@ import { fetchMovieDetails } from '../../features/movieSlice'
 import 'react-router-dom'
 
 function MovieDetail() {
-   const { movieId } = useParams() // path에 있는 movieId를 가져옴
+   const { movieId } = useParams()
    const dispatch = useDispatch()
-   /*
-   state.movies = {
-      movies: [...], // 인기영화목록
-      movieDetails: ... , // 영화 상세 정보
-      loading: false, // 로딩여부
-      error: null, // 에러메세지
-   }
-   */
+
    const { movieDetails, loading, error } = useSelector((state) => state.movies)
 
-   // 맨 처음에 컴포넌트 렌더링후 1번 실행, movieId가 바뀔때 마다 실행
    useEffect(() => {
       if (movieId) {
          dispatch(fetchMovieDetails(movieId))
@@ -28,11 +20,6 @@ function MovieDetail() {
    if (error) return <p>Error: {error}</p>
 
    return (
-      /*
-       ★ 맨처음 렌더링 발생시 movieDetails의 값은 null
-          -> 렌더링 이후 useEffect가 실행되면서 movieDetails 값이 들어옴
-          -> && 렌더링 연산자를 이용해 movieDetails 값이 있을때만 렌더링 하도록함
-      */
       <div style={{ padding: '20px' }}>
          {movieDetails && (
             <div>
