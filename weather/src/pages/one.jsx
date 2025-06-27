@@ -3,16 +3,20 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetch_forecast, fetch_weather } from '../logic/slice'
 import { Foot, Menu } from '../contents/contents'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import './one.css'
 import '../contents/root.css'
 
 const One = () => {
    const dispatch = useDispatch()
    const { forecast, weather, loading, error } = useSelector((state) => state.weather)
+   const { city } = useParams()
+   let id = null
+   if (city == null) id = 'incheon'
+   else id = city
    useEffect(() => {
-      dispatch(fetch_weather('incheon'))
-      dispatch(fetch_forecast('incheon'))
+      dispatch(fetch_weather(id))
+      dispatch(fetch_forecast(id))
    }, [dispatch])
    if (loading) return <p>로딩중..</p>
    if (error) return <p>Error:{error}</p>
@@ -54,7 +58,7 @@ const One = () => {
                <br></br>
                <span className="content1_text_temp">온도 : {weather.main.temp}°C</span>
             </div>
-            <NavLink to="/daily_detail" className="content1_detail">
+            <NavLink to={'/daily_detail/' + id} className="content1_detail">
                자세히
             </NavLink>
          </div>
@@ -64,7 +68,7 @@ const One = () => {
 
          <div className="content2">
             <ul className="content2_forecast">{list()}</ul>
-            <NavLink to="/week_detail" className="content1_detail">
+            <NavLink to={'/week_detail/' + id} className="content1_detail">
                자세히
             </NavLink>
          </div>

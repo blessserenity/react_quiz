@@ -13,10 +13,11 @@ function App() {
          <BrowserRouter>
             <Routes>
                <Route path="/" element={<One></One>}></Route>
+               <Route path="/:city" element={<One></One>}></Route>
                <Route path="/map" element={<Two></Two>}></Route>
                <Route path="/*" element={<Null1></Null1>}></Route>
-               <Route path="/daily_detail" element={<Three></Three>}></Route>
-               <Route path="/week_detail" element={<Four></Four>}></Route>
+               <Route path="/daily_detail/:city" element={<Three></Three>}></Route>
+               <Route path="/week_detail/:city" element={<Four></Four>}></Route>
             </Routes>
          </BrowserRouter>
       </Provider>

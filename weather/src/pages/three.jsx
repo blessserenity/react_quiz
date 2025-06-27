@@ -3,15 +3,19 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetch_forecast, fetch_weather } from '../logic/slice'
 import { Foot, Menu } from '../contents/contents'
-// import { NavLink, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './three.css'
 import './one.css'
 const Three = () => {
+   const { city } = useParams()
+   let id = null
+   if (city == null) id = 'incheon'
+   else id = city
    const dispatch = useDispatch()
    const { forecast, weather, loading, error } = useSelector((state) => state.weather)
    useEffect(() => {
-      dispatch(fetch_weather('incheon'))
-      dispatch(fetch_forecast('incheon'))
+      dispatch(fetch_weather(id))
+      dispatch(fetch_forecast(id))
    }, [dispatch])
    if (loading) return <p>로딩중..</p>
    if (error) return <p>Error:{error}</p>

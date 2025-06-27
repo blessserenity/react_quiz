@@ -1,12 +1,17 @@
 import { NavLink } from 'react-router-dom'
 import '../contents/contents.css'
 import '../contents/root.css'
+import { useParams } from 'react-router-dom'
 export const Menu = () => {
+   const { city } = useParams()
+   let id = null
+   if (city == null) id = 'incheon'
+   else id = city
    return (
       <div className="menu">
          <ul>
             <li className="menu_list1">
-               <NavLink to="/">
+               <NavLink to={'/' + id}>
                   <div className="menu_logo">Weather</div>
                </NavLink>
             </li>
