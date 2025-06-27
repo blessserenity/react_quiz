@@ -5,17 +5,6 @@
 body {
    /* background-color: #dde7e7; */
    /* background-color: #e7e6d2; */
-   background-color: #959ea2;
+   background-color: var(--color1);
    margin-top: 40px;
-}
-.one {
-   width: 75%;
-   margin: auto;
-   border: 2px solid #616264;
-   border-radius: 5px;
-   padding: 20px;
-}
-.one_menu {
-   display: flex;
-   flex-wrap: wrap;
 }

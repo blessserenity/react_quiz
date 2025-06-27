@@ -1,0 +1,8 @@
+.two {
+   width: 75%;
+   margin: auto;
+}
+.two > img {
+   width: 100%;
+   height: 50%;
+}
