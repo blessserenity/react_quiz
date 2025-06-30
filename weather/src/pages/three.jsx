@@ -16,7 +16,7 @@ const Three = () => {
    useEffect(() => {
       dispatch(fetch_weather(id))
       dispatch(fetch_forecast(id))
-   }, [dispatch])
+   }, [dispatch, id])
    if (loading) return <p>로딩중..</p>
    if (error) return <p>Error:{error}</p>
    if (!weather || !weather.weather || !forecast || !forecast.list) {
