@@ -1,0 +1,10 @@
+body {
+   background-color: var(--color3);
+}
+.contents {
+   padding: 25px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   margin: auto;
+   width: 50%;
+}

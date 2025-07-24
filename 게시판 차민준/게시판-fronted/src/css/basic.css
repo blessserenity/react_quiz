@@ -1,0 +1,47 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+body {
+   min-width: 400px;
+}
+a {
+   text-decoration: none;
+   color: black;
+}
+ul {
+   list-style: none;
+}
+.menu {
+   background-color: var(--color1);
+   padding: 0px 0px 0px 20px;
+}
+.menu > ul {
+   display: flex;
+   align-items: center;
+}
+.menu > ul > li > a > img {
+   height: 50px;
+}
+.login {
+   padding: 20px;
+   background-color: var(--color2);
+}
+.loginA {
+   padding: 20px;
+}
+.foot {
+   background-color: var(--color1);
+   padding: 50px;
+   display: flex;
+   justify-content: center;
+   color: var(--color2);
+}
+.right {
+   margin-left: auto;
+   display: block;
+}
+.write {
+   padding: 20px;
+   background-color: var(--color4);
+}

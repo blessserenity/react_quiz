@@ -1,0 +1,28 @@
+.two {
+   width: 75%;
+   margin: auto;
+   border: 2px solid #616264;
+   border-radius: 5px;
+}
+.two > img {
+   width: 100%;
+   height: 50%;
+}
+.two_list {
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 20px;
+   flex-wrap: wrap;
+}
+.two_list > li {
+   width: 200px;
+   margin-bottom: 20px;
+}
+.two_list > li > a {
+   height: 200px;
+   background-color: #616264;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 40px;
+}

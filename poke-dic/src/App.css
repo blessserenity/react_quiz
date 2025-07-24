@@ -1,0 +1,30 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   width: 75%;
+   margin: auto;
+   border: 1px solid lightblue;
+}
+img {
+   width: 200px;
+   display: block;
+}
+.temp {
+   padding: 0 25px;
+   padding-top: 25px;
+}
+ul {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+li {
+   list-style: none;
+}
+.checked {
+   background-color: black;
+   color: gray;
+}

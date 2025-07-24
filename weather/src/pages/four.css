@@ -1,0 +1,10 @@
+.four {
+   width: 75%;
+   margin: auto;
+   border: 2px solid #616264;
+   border-radius: 5px;
+}
+.content1_list {
+   display: flex;
+   flex-wrap: wrap;
+}
